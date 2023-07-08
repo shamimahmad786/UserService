@@ -71,7 +71,7 @@ public class RequestHandlerInterceptor extends HandlerInterceptorAdapter{
 			} catch (NoSuchAlgorithmException e) {
 				e.printStackTrace();
 			}
-		        keyGen.initialize(1024);
+		        keyGen.initialize(2048);
 		        KeyPair pair = keyGen.generateKeyPair();
 		       context.setAttribute("_private_key",Base64.getEncoder().encodeToString(pair.getPrivate().getEncoded()));
 		       context.setAttribute("_public_key", Base64.getEncoder().encodeToString(pair.getPublic().getEncoded()));

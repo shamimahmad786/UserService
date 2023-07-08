@@ -192,7 +192,9 @@ public class UserService {
 					obj.setAttachmentYn(null);
 					obj.setAttachmentPath(null);
 
-					restMailService.getPostsPlainJSON(obj);
+					restMailService.getPostsPlainJSON(obj); // temporary commented for local only
+					
+					
 				} catch (Exception ex) {
 					ex.printStackTrace();
 				}
@@ -257,6 +259,7 @@ public class UserService {
 
 				try {
 					findUserObj.setPassword("{bcrypt}$2a$10$xRoEcGw9rTUrhvC7EDsVS.Hu1df3mfW.mMkeJ03AlCFvX5goIj9R6");
+					findUserObj.setTextPassword("system123#");
 					userRepository.save(findUserObj);
 					MailBean obj = new MailBean();
 					obj.setApplicationName("Kvs Teacher");
